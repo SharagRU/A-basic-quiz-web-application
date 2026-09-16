@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Can You Outsmart the AI?</title>
+
+    <link
+        rel="stylesheet"
+        href="./css/style.css"
+    >
+
+</head>
+
+
+<body>
+
+    <!-- =====================================
+         BACKGROUND
+    ====================================== -->
+
+    <div class="background-grid"></div>
+
+    <div class="glow glow-one"></div>
+
+    <div class="glow glow-two"></div>
+
+
+    <!-- =====================================
+         MAIN APPLICATION
+    ====================================== -->
+
+    <main class="app">
+
+
+        <!-- =================================
+             HOME SCREEN
+        ================================== -->
+
+        <section
+            id="home-screen"
+            class="screen active"
+        >
+
+            <div class="home-content">
+
+
+                <div class="ai-badge">
+
+                    <span class="status-dot"></span>
+
+                    AI CHALLENGE SYSTEM
+
+                </div>
+
+
+                <p class="eyebrow">
+                    HUMAN VS MACHINE
+                </p>
+
+
+                <h1>
+
+                    CAN YOU
+
+                    <span>OUTSMART</span>
+
+                    THE AI?
+
+                </h1>
+
+
+                <p class="subtitle">
+
+                    Think faster. Solve smarter.
+
+                    Prove that human intelligence
+                    still has the edge.
+
+                </p>
+
+
+                <button
+                    id="start-btn"
+                    class="primary-btn"
+                >
+
+                    <span>
+                        START CHALLENGE
+                    </span>
+
+                    <span class="arrow">
+                        →
+                    </span>
+
+                </button>
+
+
+                <div class="home-stats">
+
+
+                    <div>
+
+                        <strong>
+                            10
+                        </strong>
+
+                        <span>
+                            CHALLENGES
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            ∞
+                        </strong>
+
+                        <span>
+                            POSSIBILITIES
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            1
+                        </strong>
+
+                        <span>
+                            WINNER
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================
+             CHALLENGE SCREEN
+        ================================== -->
+
+        <section
+            id="challenge-screen"
+            class="screen"
+        >
+
+
+            <!-- GAME HEADER -->
+
+            <header class="game-header">
+
+
+                <!-- LOGO -->
+
+                <div class="game-logo">
+
+                    <span class="logo-icon">
+                        ◈
+                    </span>
+
+                    OUTSMART<span>AI</span>
+
+                </div>
+
+
+                <!-- QUESTION PROGRESS -->
+
+                <div class="game-progress">
+
+                    <span>
+                        CHALLENGE
+                    </span>
+
+                    <strong id="question-number">
+                        01
+                    </strong>
+
+                    <span>
+                        / 10
+                    </span>
+
+                </div>
+
+
+                <!-- STREAK -->
+
+                <div class="streak-display">
+
+                    <span>
+                        🔥 STREAK
+                    </span>
+
+                    <strong id="streak">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <!-- SCORE -->
+
+                <div class="score-display">
+
+                    <span>
+                        SCORE
+                    </span>
+
+                    <strong id="score">
+                        000
+                    </strong>
+
+                </div>
+
+
+            </header>
+
+
+
+            <!-- =================================
+                 CHALLENGE CONTENT
+            ================================== -->
+
+            <div class="challenge-container">
+
+
+                <!-- TIMER -->
+
+                <div class="timer-container">
+
+
+                    <div class="timer-label">
+
+                        <span>
+                            TIME REMAINING
+                        </span>
+
+                        <strong id="timer">
+                            10.0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="timer-bar">
+
+                        <div
+                            id="timer-progress"
+                        ></div>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- =================================
+                     AI PANEL
+                ================================== -->
+
+                <div class="ai-panel">
+
+
+                    <div class="ai-avatar">
+
+                        <div class="ai-eye"></div>
+
+                    </div>
+
+
+                    <div class="ai-message">
+
+
+                        <div class="ai-name">
+
+                            <span class="status-dot"></span>
+
+                            AI
+
+                        </div>
+
+
+                        <p id="ai-message">
+
+                            Let's see what you've got.
+
+                        </p>
+
+
+                    </div>
+
+
+                    <div class="ai-confidence">
+
+
+                        <span>
+                            AI CONFIDENCE
+                        </span>
+
+
+                        <div class="confidence-bar">
+
+                            <div
+                                id="confidence-progress"
+                            ></div>
+
+                        </div>
+
+
+                        <strong id="confidence">
+                            82%
+                        </strong>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- =================================
+                     QUESTION CARD
+                ================================== -->
+
+                <div class="question-card">
+
+
+                    <!-- CATEGORY -->
+
+                    <div
+                        class="question-category"
+                        id="question-category"
+                    >
+                        CHALLENGE
+                    </div>
+
+
+                    <!-- QUESTION -->
+
+                    <h2 id="question"></h2>
+
+
+                    <!-- Dynamic question display
+                         gets inserted by game.js -->
+
+
+                    <!-- ANSWERS -->
+
+                    <div class="answers">
+
+
+                        <button
+                            class="answer-btn"
+                            data-answer="0"
+                        >
+
+                            <span class="answer-key">
+                                A
+                            </span>
+
+                            <span>
+                                Option A
+                            </span>
+
+                        </button>
+
+
+                        <button
+                            class="answer-btn"
+                            data-answer="1"
+                        >
+
+                            <span class="answer-key">
+                                B
+                            </span>
+
+                            <span>
+                                Option B
+                            </span>
+
+                        </button>
+
+
+                        <button
+                            class="answer-btn"
+                            data-answer="2"
+                        >
+
+                            <span class="answer-key">
+                                C
+                            </span>
+
+                            <span>
+                                Option C
+                            </span>
+
+                        </button>
+
+
+                        <button
+                            class="answer-btn"
+                            data-answer="3"
+                        >
+
+                            <span class="answer-key">
+                                D
+                            </span>
+
+                            <span>
+                                Option D
+                            </span>
+
+                        </button>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================
+             RESULT SCREEN
+        ================================== -->
+
+        <section
+            id="result-screen"
+            class="screen"
+        >
+
+
+            <div class="result-container">
+
+
+                <div class="result-label">
+                    CHALLENGE COMPLETE
+                </div>
+
+
+                <h2 id="result-title">
+                    YOU OUTSMARTED THE AI
+                </h2>
+
+
+                <!-- FINAL SCORE -->
+
+                <div class="final-score">
+
+                    <span>
+                        FINAL SCORE
+                    </span>
+
+                    <strong id="final-score">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <!-- RESULT STATS -->
+
+                <div class="result-stats">
+
+
+                    <div class="result-stat">
+
+                        <span>
+                            🧠
+                        </span>
+
+                        <strong id="correct-score">
+                            0 / 10
+                        </strong>
+
+                        <small>
+                            ACCURACY
+                        </small>
+
+                    </div>
+
+
+                    <div class="result-stat">
+
+                        <span>
+                            ⚡
+                        </span>
+
+                        <strong id="speed-score">
+                            0%
+                        </strong>
+
+                        <small>
+                            SPEED
+                        </small>
+
+                    </div>
+
+
+                    <div class="result-stat">
+
+                        <span>
+                            🤖
+                        </span>
+
+                        <strong id="ai-score">
+                            0
+                        </strong>
+
+                        <small>
+                            AI SCORE
+                        </small>
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- RANK -->
+
+                <div class="rank-card">
+
+
+                    <span class="rank-label">
+                        YOUR RANK
+                    </span>
+
+
+                    <div class="rank">
+
+                        <span>
+                            🪵
+                        </span>
+
+                        ROOKIE
+
+                    </div>
+
+
+                    <p>
+
+                        Complete more challenges
+                        to discover how you compare
+                        against the AI.
+
+                    </p>
+
+
+                </div>
+
+
+                <!-- BUTTONS -->
+
+                <div class="result-buttons">
+
+
+                    <button
+                        id="play-again-btn"
+                        class="primary-btn"
+                    >
+
+                        <span>
+                            PLAY AGAIN
+                        </span>
+
+                        <span>
+                            ↻
+                        </span>
+
+                    </button>
+
+
+                    <button
+                        id="home-btn"
+                        class="secondary-btn"
+                    >
+
+                        BACK TO HOME
+
+                    </button>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =====================================
+         JAVASCRIPT
+    ====================================== -->
+
+    <script src="./js/questions.js"></script>
+
+    <script src="./js/game.js"></script>
+
+    <script src="./js/app.js"></script>
+
+
+</body>
+
+</html>
